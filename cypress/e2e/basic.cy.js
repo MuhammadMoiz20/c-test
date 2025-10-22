@@ -1,57 +1,44 @@
-describe('Sample Tests', () => {
-  it('should pass - addition works', () => {
-    expect(2 + 2).to.equal(4);
+const math = require('../../src/math');
+const strings = require('../../src/strings');
+const arrays = require('../../src/arrays');
+
+describe('Source File Tests', () => {
+  it('should pass - math add function works correctly', () => {
+    const result = math.add(5, 3);
+    expect(result).to.equal(8);
   });
 
-  it('should fail - incorrect assertion', () => {
-    expect(5).to.equal(10);
-  });
-});
-
-describe('String Tests', () => {
-  it('should concatenate strings', () => {
-    expect('Hello' + ' ' + 'World').to.equal('Hello World');
+  it('should fail - math multiply gives wrong result', () => {
+    const result = math.multiply(4, 5);
+    expect(result).to.equal(100); // This will fail, actual is 20
   });
 
-  it('should check string length', () => {
-    expect('Cypress'.length).to.equal(7);
+  describe('String Utilities', () => {
+    it('should capitalize first letter', () => {
+      const result = strings.capitalize('hello');
+      expect(result).to.equal('Hello');
+    });
+
+    it('should detect palindromes', () => {
+      const result = strings.isPalindrome('racecar');
+      expect(result).to.be.true;
+    });
   });
 
-  it('should verify string includes substring', () => {
-    expect('Testing with Cypress').to.include('Cypress');
-  });
-});
+  describe('Array Utilities', () => {
+    it('should calculate sum correctly', () => {
+      const result = arrays.sum([1, 2, 3, 4, 5]);
+      expect(result).to.equal(15);
+    });
 
-describe('Array Tests', () => {
-  it('should check array length', () => {
-    expect([1, 2, 3, 4, 5]).to.have.lengthOf(5);
-  });
+    it('should find maximum value', () => {
+      const result = arrays.max([1, 5, 3, 9, 2]);
+      expect(result).to.equal(9);
+    });
 
-  it('should verify array includes value', () => {
-    expect([1, 2, 3]).to.include(2);
-  });
-
-  it('should check array equality', () => {
-    expect([1, 2, 3]).to.deep.equal([1, 2, 3]);
-  });
-});
-
-describe('Boolean Tests', () => {
-  it('should verify true value', () => {
-    expect(true).to.be.true;
-  });
-
-  it('should verify false value', () => {
-    expect(false).to.be.false;
-  });
-
-  it('should verify truthy values', () => {
-    expect(1).to.be.ok;
-    expect('text').to.be.ok;
-  });
-
-  it('should verify falsy values', () => {
-    expect(0).to.be.empty;
-    expect('').to.be.empty;
+    it('should get unique values', () => {
+      const result = arrays.unique([1, 2, 2, 3, 3, 3]);
+      expect(result).to.deep.equal([1, 2, 3]);
+    });
   });
 });
