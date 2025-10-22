@@ -1,0 +1,47 @@
+body, html {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background-image: url('img/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px auto;
+}
+
+#main {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin-top: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+} 
+
+.active {
+  color: pink;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f0f0f0;
+}

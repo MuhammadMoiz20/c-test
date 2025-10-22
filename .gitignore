@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+.DS_Store
+node_modules
+.env
+npm-debug.log
+build
+dist
+cypress/screenshots/
+cypress/videos/
+=======
+dist
+node_modules
+.DS_Store 
+>>>>>>> bcee28edcdba1a6974669629b76b9295984b9f9c

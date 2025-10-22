@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "ignore": [
+    "src/components/**",
+    "src/img/**",
+    "src/index.jsx",
+    "src/store/**"
+  ]
+}
