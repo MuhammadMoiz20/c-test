@@ -1,0 +1,195 @@
+body, html {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 100%);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+#board {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.app-controls {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+.note-creator {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.note-organizer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.noteinput input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.noteinput button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.noteinput button:hover {
+  background-color: #45a049;
+}
+
+.note {
+  position: absolute;
+  background-color: #fff176;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: move;
+  min-width: 150px;
+  min-height: 150px;
+}
+
+.note-handle {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  cursor: move;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.note-content {
+  padding: 15px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.note-content h1 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.note-text {
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.note-controls {
+  display: flex;
+  gap: 5px;
+  margin-top: auto;
+}
+
+.note-controls button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.note-controls button:hover {
+  background-color: #f0f0f0;
+}
+
+.note-editing {
+  padding: 15px;
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+}
+
+.note-editing input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.note-editing textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.note-edit-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.category-select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.note-edit-controls button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.note-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(-45deg, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 70%, transparent 70%);
+  cursor: se-resize;
+}
+
+.note-resize-handle:hover {
+  background: linear-gradient(-45deg, transparent 0%, transparent 30%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.5) 70%, transparent 70%);
+}

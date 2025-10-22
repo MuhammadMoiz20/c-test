@@ -1,0 +1,22 @@
+{
+  "name": "mern-notes-app-sample",
+  "version": "1.0.0",
+  "description": "Sample MERN Notes App for testing",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "firebase": "^11.6.1",
+    "react-draggable": "^4.4.6",
+    "react-markdown": "^10.1.0",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4"
+  }
+}
