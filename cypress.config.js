@@ -1,15 +1,10 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-extraneous-dependencies */
-const { defineConfig } = require('cypress');
-
-const baseUrl = process.env.PORT ? `http://localhost:${process.env.PORT}` : 'http://localhost:9090';
-
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl,
-    video: false,
-    supportFile: false,
-    screenshotOnRunFailure: false,
+    baseUrl: 'http://127.0.0.1:5173',
+    supportFile: 'cypress/support/e2e.js',
   },
-});
+  video: false,
+  screenshotOnRunFailure: true,
+})
