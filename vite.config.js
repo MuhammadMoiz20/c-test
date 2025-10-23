@@ -1,10 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import autoprefixer from 'autoprefixer';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     eslint(),
@@ -38,4 +36,4 @@ export default defineConfig({
       ],
     },
   },
-});
+}); 
