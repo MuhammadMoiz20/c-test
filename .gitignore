@@ -1,4 +1,15 @@
+# Root
 node_modules/
+*.log
 .DS_Store
-.cypress-cache/
-coverage/
+.env
+.env.*
+
+# Server
+/server/node_modules/
+/server/.env
+
+# Client
+/client/node_modules/
+/client/dist/
+/client/.env

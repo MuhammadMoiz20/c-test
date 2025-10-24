@@ -1,17 +1,16 @@
 {
   "name": "c-test",
-  "version": "1.0.0",
   "private": true,
-  "description": "Basic static app with Cypress tests",
+  "version": "1.0.0",
   "scripts": {
-    "serve": "http-server ./src -p 5173 -a 127.0.0.1 -c-1",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open",
-    "test": "start-server-and-test serve http://127.0.0.1:5173 cy:run"
+    "dev:all": "concurrently -k -s first -n server,client \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "cypress:open": "cypress open --e2e",
+    "cypress:run": "cypress run --e2e",
+    "test:e2e": "start-server-and-test \"npm run dev:all\" http://localhost:5173 \"npm run cypress:run\""
   },
   "devDependencies": {
-    "cypress": "^15.5.0",
-    "http-server": "^14.1.1",
-    "start-server-and-test": "^2.1.2"
+    "concurrently": "^9.0.1",
+    "cypress": "^13.15.0",
+    "start-server-and-test": "^2.0.8"
   }
 }

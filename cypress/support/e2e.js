@@ -1,1 +1,1 @@
-// You can put global Cypress configuration or behaviors here
+// You can add custom commands or global hooks here.
