@@ -16,28 +16,40 @@ It lets you create and list simple todos.
 
 1) Configure environment variables
 
-- Server: copy the example and edit if needed
 ```
 cp server/.env.example server/.env
 ```
-- Client: copy the example (already set to use `http://localhost:5000`)
 ```
 cp client/.env.example client/.env
 ```
 
-2) Install dependencies (WSL)
+2) Install all dependencies
 
-Open a terminal and run:
-```
-# at repo root
+From the root directory:
+```bash
 cd /mnt/c/Users/Moiz/Desktop/Dev/c-test
-
-# install server
-cd server && npm install
-
-# install client
-cd ../client && npm install
+npm run install:all
 ```
+
+This will install dependencies for:
+- Root (Cypress, concurrently, start-server-and-test)
+- Server (Express, Mongoose, etc.)
+- Client (React, Vite)
+
+## Quick Start
+
+To install dependencies, start servers, and run tests all at once:
+
+```bash
+cd /mnt/c/Users/Moiz/Desktop/Dev/c-test
+npm start
+```
+
+This will:
+1. Install all dependencies (root, server, client)
+2. Start the API server and client dev server
+3. Run Cypress e2e tests
+4. Exit when tests complete
 
 ## Run
 
@@ -69,6 +81,26 @@ npm run dev:all
 ```
 
 Open the frontend and add todos. The app will call the API at `VITE_API_URL`.
+
+## Run Tests Only
+
+If dependencies are already installed:
+
+```bash
+cd /mnt/c/Users/Moiz/Desktop/Dev/c-test
+npm run test:e2e
+```
+
+This starts both servers and runs Cypress tests headlessly.
+
+## Available Scripts
+
+- `npm run install:all` - Install all dependencies (root, server, client)
+- `npm start` - Install deps + start servers + run tests (full pipeline)
+- `npm run dev:all` - Start server and client dev servers concurrently
+- `npm run test:e2e` - Start servers and run Cypress e2e tests
+- `npm run cypress:open` - Open Cypress UI (requires servers running separately)
+- `npm run cypress:run` - Run Cypress headlessly (requires servers running)
 
 ## API
 - GET `/api/todos` → list todos

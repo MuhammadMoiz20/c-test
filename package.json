@@ -3,10 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
     "dev:all": "concurrently -k -s first -n server,client \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "cypress:open": "cypress open --e2e",
     "cypress:run": "cypress run --e2e",
-    "test:e2e": "start-server-and-test \"npm run dev:all\" http://localhost:5173 \"npm run cypress:run\""
+    "test:e2e": "start-server-and-test \"npm run dev:all\" http://localhost:5173 \"npm run cypress:run\"",
+    "start": "npm run install:all && npm run test:e2e"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
